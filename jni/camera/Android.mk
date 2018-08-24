@@ -10,12 +10,18 @@ LOCAL_SRC_FILES:= \
 
 LOCAL_C_INCLUDES += \
     $(JNI_H_INCLUDE) \
+    system/core/base/include \
+    bootable/recovery/minui/include \
 
 LOCAL_SHARED_LIBRARIES := \
     libnativehelper \
     libcutils \
     libutils  \
     libdl \
+    android.hidl.token@1.0-utils \
+    android.hardware.graphics.bufferqueue@1.0 \
+    android.hardware.graphics.common@1.0 \
+    android.hardware.graphics.common@1.1 \
 
 LOCAL_CFLAGS += \
      -O0 -g \

@@ -40,7 +40,7 @@ static jint dpl_cameraOpenWithPackage(JNIEnv *e, jobject o, jint cameraId, jstri
         const jchar* buffer = e->GetStringChars(packageName, NULL);
         if (buffer != NULL) {
             const jsize bufferLength = e->GetStringLength(packageName);
-            android::String16 pn(buffer, bufferLength);
+            android::String16 pn( (const char16_t*) buffer, bufferLength);
             e->ReleaseStringChars(packageName, buffer);
 
             status = ims_cam_apis->cameraOpenWithPackage(cameraId, &pn);
